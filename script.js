@@ -104,8 +104,13 @@ class BaralhoGame {
     }
     
     animateCardReturn(cardElement) {
-        // Adiciona classe para animação de volta
-        cardElement.classList.add('card-return');
+        // Detecta se é mobile e aplica a animação correta
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+            cardElement.classList.add('card-return-mobile');
+        } else {
+            cardElement.classList.add('card-return');
+        }
         
         // Remove a carta após a animação e cria a nova carta
         setTimeout(() => {
@@ -161,8 +166,13 @@ class BaralhoGame {
     }
     
     applyEffect(cardElement) {
-        // Aplica o efeito de saída do baralho (mesmo movimento da volta)
-        cardElement.classList.add('card-fly-from-deck');
+        // Detecta se é mobile e aplica a animação correta
+        const isMobile = window.innerWidth <= 768;
+        if (isMobile) {
+            cardElement.classList.add('card-fly-from-deck-mobile');
+        } else {
+            cardElement.classList.add('card-fly-from-deck');
+        }
     }
     
     
