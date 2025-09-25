@@ -118,34 +118,7 @@ class BaralhoGame {
     }
     
     createNewCard() {
-        // Cria a carta inicialmente com o verso
-        const cardElement = document.createElement('div');
-        cardElement.className = 'card';
-        cardElement.innerHTML = `<img src="Imagens/Verso.png" alt="Verso da carta">`;
-        
-        this.cardArea.appendChild(cardElement);
-        
-        // Aplica o efeito selecionado
-        this.applyEffect(cardElement);
-        
-        // Depois de 1.2s: vira a carta e adiciona destaque
-        setTimeout(() => {
-            const img = cardElement.querySelector('img');
-            if (img) {
-                img.src = this.cardToFlip.image;
-                cardElement.classList.add('card-highlight');
-            }
-            
-            // Adiciona foco na página
-            document.body.classList.add('focused');
-            
-            // A carta sai sempre com o verso e vira apenas no final
-        }, 1200);
-        
-        // Remove o foco após um tempo
-        setTimeout(() => {
-            this.isDrawing = false;
-        }, 800);
+        this.createAndAnimateCard();
     }
     
     animateCardDraw() {
@@ -155,13 +128,16 @@ class BaralhoGame {
             return; // Não cria nova carta se já existe uma
         }
         
+        this.createAndAnimateCard();
+    }
+    
+    createAndAnimateCard() {
         // Cria a carta inicialmente com o verso
         const cardElement = document.createElement('div');
         cardElement.className = 'card';
         cardElement.innerHTML = `<img src="Imagens/Verso.png" alt="Verso da carta">`;
         
         this.cardArea.appendChild(cardElement);
-        
         
         // Aplica o efeito selecionado
         this.applyEffect(cardElement);
@@ -185,45 +161,8 @@ class BaralhoGame {
     }
     
     applyEffect(cardElement) {
-        // Remove todas as classes de efeito anteriores
-        const effectClasses = [
-            'card-fly-from-deck', 'card-rotation-3d', 'card-zoom', 
-            'card-particles', 'card-teleport', 'card-wave', 
-            'card-explosion', 'card-smoke', 'card-lightning'
-        ];
-        effectClasses.forEach(cls => cardElement.classList.remove(cls));
-        
-        // Aplica o efeito selecionado
-        switch(this.currentEffect) {
-            case 'rotation':
-                cardElement.classList.add('card-rotation-3d');
-                break;
-            case 'zoom':
-                cardElement.classList.add('card-zoom');
-                break;
-            case 'particles':
-                cardElement.classList.add('card-particles');
-                break;
-            case 'teleport':
-                cardElement.classList.add('card-teleport');
-                break;
-            case 'wave':
-                cardElement.classList.add('card-wave');
-                break;
-            case 'explosion':
-                cardElement.classList.add('card-explosion');
-                break;
-            case 'smoke':
-                cardElement.classList.add('card-smoke');
-                break;
-            case 'lightning':
-                cardElement.classList.add('card-lightning');
-                break;
-            default:
-                cardElement.classList.add('card-fly-from-deck');
-        }
-        
-        // A carta sai sempre com o verso e vira apenas no final
+        // Aplica o efeito de saída do baralho (mesmo movimento da volta)
+        cardElement.classList.add('card-fly-from-deck');
     }
     
     

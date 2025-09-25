@@ -25,28 +25,30 @@ body {
 }
 
 body.focused {
-    background: rgba(0, 0, 0, 0.8);
-    animation: none;
+    background: rgba(0, 0, 0, 0.8) !important;
+    animation: none !important;
 }
 
 body.focused .deck {
-    opacity: 0.3;
-    transform: scale(0.8);
-    transition: all 0.5s ease;
+    opacity: 0.3 !important;
+    transform: scale(0.8) !important;
+    transition: all 0.5s ease !important;
+    filter: blur(5px) !important;
 }
 
 body.focused .reset-btn {
-    opacity: 0.3;
-    transform: scale(0.8);
-    transition: all 0.5s ease;
+    opacity: 0.3 !important;
+    transform: scale(0.8) !important;
+    transition: all 0.5s ease !important;
+    filter: blur(5px) !important;
 }
 
 body.focused .card {
-    transform: scale(1.2) rotateX(0deg) rotateY(0deg);
-    z-index: 1000;
-    transition: all 0.5s ease;
-    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.8);
-    filter: none;
+    transform: scale(1.2) rotateX(0deg) rotateY(0deg) !important;
+    z-index: 1000 !important;
+    transition: all 0.5s ease !important;
+    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.8) !important;
+    filter: none !important;
 }
 
 @keyframes gradientShift {
