@@ -80,7 +80,9 @@ body.focused .card {
 
 .page-footer {
     margin-top: auto;
-    padding: 10px 0;
+    padding: 20px 0;
+    position: relative;
+    z-index: 10;
 }
 
 .page-footer p {
@@ -115,11 +117,13 @@ body.focused .card {
     left: 3px;
     width: 280px;
     height: 380px;
-    background: url('Imagens/Verso.png') center/cover;
+    background: url('Imagens/Verso.png') center/contain;
     border-radius: 25px;
-    border: 3px solid #00ff88;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    border: none;
+    box-shadow: none;
     z-index: -1;
+    background-repeat: no-repeat;
+    background-color: #FFD21F;
 }
 
 .deck::after {
@@ -129,11 +133,13 @@ body.focused .card {
     left: 6px;
     width: 280px;
     height: 380px;
-    background: url('Imagens/Verso.png') center/cover;
+    background: url('Imagens/Verso.png') center/contain;
     border-radius: 25px;
-    border: 3px solid #00ff88;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: none;
+    box-shadow: none;
     z-index: -2;
+    background-repeat: no-repeat;
+    background-color: #FFD21F;
 }
 
 
@@ -152,14 +158,16 @@ body.focused .card {
     width: 280px;
     height: 380px;
     border-radius: 25px;
-    background: #1a1a2e url('Imagens/Verso.png') center/cover !important;
-    border: 3px solid #00ff88;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    background: url('Imagens/Verso.png') center/contain !important;
+    border: none;
+    box-shadow: none;
     position: relative;
     z-index: 10;
-    background-size: cover !important;
+    background-size: contain !important;
     background-repeat: no-repeat !important;
+    background-color: #FFD21F !important;
 }
+
 
 
 
@@ -167,7 +175,7 @@ body.focused .card {
 .card-area {
     position: relative;
     width: 400px;
-    height: 600px;
+    height: 580px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -176,11 +184,11 @@ body.focused .card {
 }
 
 .card {
-    width: 350px;
+    width: 360px;
     height: 500px;
     border-radius: 25px;
-    border: 3px solid #ff0080;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+    border: none;
+    box-shadow: none;
     position: absolute;
     transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     transform: rotateX(0deg) rotateY(0deg);
