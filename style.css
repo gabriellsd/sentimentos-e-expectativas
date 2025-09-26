@@ -110,8 +110,9 @@ body.focused .card {
     cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><text y="24" font-size="24">👆</text></svg>'), auto;
 }
 
-.deck::before {
-    content: '';
+
+/* Camadas adicionais para efeito de profundidade equilibrado */
+.deck-layer-1 {
     position: absolute;
     top: 3px;
     left: 3px;
@@ -124,10 +125,10 @@ body.focused .card {
     z-index: -1;
     background-repeat: no-repeat;
     background-color: #FFD21F;
+    opacity: 0.8;
 }
 
-.deck::after {
-    content: '';
+.deck-layer-2 {
     position: absolute;
     top: 6px;
     left: 6px;
@@ -140,6 +141,55 @@ body.focused .card {
     z-index: -2;
     background-repeat: no-repeat;
     background-color: #FFD21F;
+    opacity: 0.6;
+}
+
+.deck-layer-3 {
+    position: absolute;
+    top: 9px;
+    left: 9px;
+    width: 280px;
+    height: 380px;
+    background: url('Imagens/Verso.png') center/contain;
+    border-radius: 25px;
+    border: none;
+    box-shadow: none;
+    z-index: -3;
+    background-repeat: no-repeat;
+    background-color: #FFD21F;
+    opacity: 0.4;
+}
+
+.deck-layer-4 {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 280px;
+    height: 380px;
+    background: url('Imagens/Verso.png') center/contain;
+    border-radius: 25px;
+    border: none;
+    box-shadow: none;
+    z-index: -4;
+    background-repeat: no-repeat;
+    background-color: #FFD21F;
+    opacity: 0.3;
+}
+
+.deck-layer-5 {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 280px;
+    height: 380px;
+    background: url('Imagens/Verso.png') center/contain;
+    border-radius: 25px;
+    border: none;
+    box-shadow: none;
+    z-index: -5;
+    background-repeat: no-repeat;
+    background-color: #FFD21F;
+    opacity: 0.2;
 }
 
 
@@ -590,11 +640,11 @@ body.focused .card {
         margin-bottom: 80px; /* Aumentado margin-bottom para subir a escrita */
     }
     
-    .deck::before,
-    .deck::after,
-    .deck .card-layer-1,
-    .deck .card-layer-2,
-    .deck .card-layer-3 {
+    .deck-layer-1,
+    .deck-layer-2,
+    .deck-layer-3,
+    .deck-layer-4,
+    .deck-layer-5 {
         width: 180px;
         height: 250px;
     }
@@ -644,11 +694,11 @@ body.focused .card {
         margin-bottom: 60px; /* Aumentado margin-bottom para subir a escrita */
     }
     
-    .deck::before,
-    .deck::after,
-    .deck .card-layer-1,
-    .deck .card-layer-2,
-    .deck .card-layer-3 {
+    .deck-layer-1,
+    .deck-layer-2,
+    .deck-layer-3,
+    .deck-layer-4,
+    .deck-layer-5 {
         width: 150px;
         height: 200px;
     }
